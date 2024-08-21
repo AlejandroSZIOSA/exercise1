@@ -6,7 +6,7 @@ btn.addEventListener("click", (e) => {
 
   //Create new element
   const newItem = document.createElement("li");
-  newItem.innerHTML = `<li>${input}</li>`;
+  newItem.innerHTML = input;
 
   //Add new element
   olEl.appendChild(newItem);
