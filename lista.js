@@ -1,19 +1,24 @@
 const inputEl = document.getElementById("textInput");
-const olEl = document.getElementById("list");
+const ulEl = document.getElementById("listBody");
 
 btn.addEventListener("click", (e) => {
   let input = inputEl.value;
 
-  //Create new elements
+  //Creating new elements
   const newItem = document.createElement("li");
   newItem.innerHTML = input;
   const newBtn = document.createElement("button");
   newBtn.innerHTML = "Remove";
 
-  //Add new elements
-  olEl.appendChild(newItem);
+  //Adding new elements
+  ulEl.appendChild(newItem);
   newItem.appendChild(newBtn);
 
-  //Clean Input Element
+  //Event listener remove (nested event listeners)
+  newItem.addEventListener("click", function () {
+    this.remove();
+  });
+
+  //Cleaning Input Element
   inputEl.value = "";
 });
